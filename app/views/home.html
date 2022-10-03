@@ -1,0 +1,36 @@
+{% extends 'master.html' %}
+
+{% block master %}
+
+
+<main>
+    <h1>Principais Filmes</h1>
+
+    {% if films == false %} 
+        <h3 style="color:red;text-align:center;margin-top:1em;">Não há filmes para assistir no momento!</h3>
+    {% endif %}
+
+    <div class="cards">
+        
+        {% for film in films %}
+            <div class="card">
+                <div class="flutuation">
+                    <img class="play-icon" src="/uploads/{{film.imageFilm}}" alt="Foto do filme">
+                    <div class="play">
+                        <img src="/assets/img/botao-play3.png" alt="">
+                    </div>
+
+                    <div class="evaluation">
+                        <img class="star-icon" src="/assets/img/star.png" alt="star icon">
+                        <p>{{film.evaluationFilm}}</p>
+                    </div>
+                </div>
+                <small>{{film.nameFilm}}</small> 
+                <small class="year">{{film.yearFilm}}</small>
+            </div>
+        {% endfor %}
+        
+    </div>
+</main>
+
+{% endblock %}

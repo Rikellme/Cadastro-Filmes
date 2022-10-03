@@ -1,0 +1,48 @@
+{% extends 'master.html' %}
+
+{% block master %}
+
+<div class="container-registration">
+    <section class="image-left">
+        <img src="/assets/img/thor-form-2.png" alt="film-form">
+    </section>
+    <section class="form">
+        <form onsubmit="handleSubmitForm()" method="post" action="/teste" enctype="multipart/form-data">
+    
+            <h1>Cadastre aqui um novo Filme</h1>
+    
+            <div class="input-wrapper">
+                <input type="text" name="nameFilm" id="nameFilm" required>
+                <label for="nameFilm">Nome do Filme</label>
+            </div>
+        
+            <div class="input-wrapper">
+                <label style="font-weight: bold;">Capa do filme: </label>
+                <input type="file" name="imageFilm" id="imageFilm" required>
+            </div>
+        
+            <div class="input-wrapper">
+                <input type="text" name="nameDirector" id="nameDirector" required>
+                <label for="nameDirector">Diretor</label>
+            </div>
+        
+            <div class="input-wrapper">
+                <input type="text" name="yearFilm" id="yearFilm" required>
+                <label for="yearFilm">Ano de lançamento</label>
+            </div>
+        
+            <div class="input-wrapper">
+                <input type="text" name="evaluationFilm" id="evaluationFilm" required>
+                <label for="evaluationFilm">Avaliação</label>
+                <small>Valor de 0 a 10</small>
+            </div>
+
+            <div class="button-group">
+                <button id="btn_send" type="submit">Enviar</button>
+                <button id="btn_clear" onclick="handleClearDatas()">Limpar Dados</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+{% endblock %}

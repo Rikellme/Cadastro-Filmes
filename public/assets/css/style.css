@@ -1,0 +1,237 @@
+h1 {
+    text-align: center;
+    font-size: clamp(3vw, 3em, 4vw);
+    color: white;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 3em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 0 15px #000;
+    transition: .3s ease-in;
+    margin-top: 3em;
+}
+
+.card .flutuation {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card .flutuation .evaluation{
+    display: none;
+    color: yellow;
+    font-size: 1.2em;
+
+    border-top-left-radius: 8px;
+
+}
+
+.card .flutuation .evaluation .star-icon {
+    width: .8em;
+    height: .8em;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+.card .play {
+    display: none;
+    transition: .4s;
+}
+
+.card .play img{
+    width: 2em;
+    height: 15%;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card:hover .flutuation .evaluation {
+    background: rgba(255, 255, 255, 0.425);
+    width: 3em;
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2em;
+
+}
+
+.card:hover .play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.699);
+    color: white;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.card small {
+    font-weight: bold;
+    color: white;
+
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    margin: 1em 0;
+}
+
+.card small.year {
+    color: rgba(255,255,255,.5);
+}
+
+/* Página de Cadastro de livros */
+
+.container-registration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-registration .image-left {
+    flex: 1;
+}
+
+.container-registration .image-left img {
+    width: 100%;
+}
+
+.container-registration .image-left {
+    flex: 1;
+}
+
+.container-registration .form {
+    flex: 1;
+}
+
+form {
+    border-radius: .8em 0;
+    padding: 5em;
+    background-color: rgba(0, 0, 0, 0.411);
+
+    color: #fff;
+
+    box-shadow: 0 0 15px #fff;
+}
+
+form h1 {
+    margin-bottom: 2em;
+}
+
+form .input-wrapper+.input-wrapper {
+    margin-top: 2em;
+}
+
+form .input-wrapper {
+    position: relative;
+}
+
+form .input-wrapper small {
+    color: red;
+}
+
+input[type="text"],
+button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    background: transparent;
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.2em;
+    transition: .2s ease-in;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+
+    color: #fff;
+}
+
+input ~ label {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    font-weight: bold;
+    transition: .4s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    transform: translateY(-2.5em);
+    color: green;
+    font-size: .8em;
+    letter-spacing: .1em;
+}
+
+input:-webkit-autofill, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+button {
+    margin-top: 3em;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    border-bottom: 3px solid #333;
+    transition: .2s ease-in;
+}
+
+.button-group {
+    display: flex;
+    gap: 3em;
+}
+
+#btn_send {
+    background: rgb(2, 122, 28);
+}
+
+#btn_clear {
+    background: rgb(160, 5, 5);
+}
+
+#btn_send:hover,
+#btn_clear:hover {
+    background-color: #000;
+    color: #fff;
+    border-bottom: none;
+    border-top: 3px solid #333;
+
+    box-shadow: 2px 2px 15px #333;
+}
+
+@media(max-width: 850px) {
+    .container-registration .image-left {
+        display: none;
+    }
+}
